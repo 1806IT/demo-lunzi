@@ -15,7 +15,19 @@
 <script>
     export default {
         name: 'g-button',
-        props: ['icon', 'iconPosition']
+        // props: ['icon', 'iconPosition']
+        props:{
+            icon:{},
+            iconPosition:{
+                type:String,
+                default:'left',
+                validator(value){
+                    // 获取用户传递的值,属性检查器
+                    console.log(value);
+                    return !(value !== 'right' && value !== 'left');
+                }
+            }
+        }
     }
 </script>
 
