@@ -3,9 +3,10 @@
         <!--<button class="g-button" :class="{'undefined':true}">-->
         <!--<button class="g-button" :class="{'left':true}">-->
         <!--<button class="g-button" :class="{'right':true}">-->
-        <svg v-if="icon" class="icon">
-            <use :xlink:href=`#i-${icon}`></use>
-        </svg>
+        <!--<svg v-if="icon" class="icon">-->
+            <!--<use :xlink:href=`#i-${icon}`></use>-->
+        <!--</svg>-->
+        <g-icon class="icon" v-if="icon" :name="icon"></g-icon>
         <div class="content">
             <slot></slot>
         </div>
@@ -22,9 +23,9 @@
                 type:String,
                 default:'left',
                 validator(value){
-                    // 获取用户传递的值,属性检查器
+                    // 获取用户传递的值
                     console.log(value);
-                    return !(value !== 'right' && value !== 'left');
+                    return !(value !== 'right'&& value !== 'left');
                 }
             }
         }
@@ -42,7 +43,7 @@
         display:inline-flex;
         justify-content: center;
         align-items: center;
-        vertical-align: top;
+        vertical-align: middle;
         &:hover {
             border-color: var(--border-color-hover);
         }
