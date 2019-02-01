@@ -4,9 +4,10 @@
         <!--<button class="g-button" :class="{'left':true}">-->
         <!--<button class="g-button" :class="{'right':true}">-->
         <!--<svg v-if="icon" class="icon">-->
-            <!--<use :xlink:href=`#i-${icon}`></use>-->
+        <!--<use :xlink:href=`#i-${icon}`></use>-->
         <!--</svg>-->
         <g-icon class="icon" v-if="icon" :name="icon"></g-icon>
+        <g-icon class ="loading" name="loading"></g-icon>
         <div class="content">
             <slot></slot>
         </div>
@@ -17,15 +18,15 @@
     export default {
         name: 'g-button',
         // props: ['icon', 'iconPosition']
-        props:{
-            icon:{},
-            iconPosition:{
-                type:String,
-                default:'left',
-                validator(value){
+        props: {
+            icon: {},
+            iconPosition: {
+                type: String,
+                default: 'left',
+                validator(value) {
                     // 获取用户传递的值
                     console.log(value);
-                    return !(value !== 'right'&& value !== 'left');
+                    return !(value !== 'right' && value !== 'left');
                 }
             }
         }
@@ -33,6 +34,10 @@
 </script>
 
 <style lang="scss">
+    @keyframes spin{
+        0%{transform:rotate(0deg)}
+        100%{transform:rotate(360deg)}
+    }
     .g-button {
         font-size: var(--font-size);
         height: var(--button-height);
@@ -40,35 +45,45 @@
         border: 1px solid var(--border-color);
         border-radius: var(--border-radius);
         padding: 0 1em;
-        display:inline-flex;
+        display: inline-flex;
         justify-content: center;
         align-items: center;
         vertical-align: middle;
+
         &:hover {
             border-color: var(--border-color-hover);
         }
+
         &:active {
             background: var(--button-active-bg)
         }
+
         &:focus {
             outline: none;
         }
-        > .icon{
+
+        > .icon {
             order: 1;
             margin-right: .3em;
         }
-        > .content{
-            order:2;
+
+        > .content {
+            order: 2;
         }
-        &.icon-right{
-            > .icon{
-                order:2;
+
+        &.icon-right {
+            > .icon {
+                order: 2;
                 margin-right: 0;
                 margin-left: .3em;
             }
-            > .content{
-                order:1;
+
+            > .content {
+                order: 1;
             }
+        }
+        .loading{
+            animation:spin 1s infinite linear;
         }
     }
 
