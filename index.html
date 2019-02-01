@@ -36,13 +36,13 @@
 <body>
 
 <div id="app">
-    <g-button icon="setting">
+    <g-button icon="setting" :loading="loading1" @click="loading1=!loading1">
         按钮
     </g-button>
-    <g-button>
+    <g-button :loading="loading2" @click="loading2=!loading2">
         按钮
     </g-button>
-    <g-button icon="setting" icon-position="right">
+    <g-button icon="setting" icon-position="right" :loading="loading3" @click="loading3=!loading3">
         <!--特别注意：这个ico-position必须用-来连接，与组件中的驼峰iconPosition对应，html中用-，组件中用驼峰-->
         按钮
     </g-button>
