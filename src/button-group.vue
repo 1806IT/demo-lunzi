@@ -9,6 +9,20 @@ import icon from './icon
 <script>
     export default {
         name: "g-button-group",
+        mounted(){
+            console.log(this.$children);
+            console.log(this.$el.children);
+            for(let node in this.$el.children){
+                console.log(node)
+            }
+            for(let node2 of this.$el.children){
+                console.log(node2)
+                let name=node2.nodeName.toLowerCase()
+                if(name!=='button'){
+                    console.warn(`g-button-group的子元素应该全是g-button,但是你写的是${name}`)
+                }
+            }
+        }
     }
 </script>
 
