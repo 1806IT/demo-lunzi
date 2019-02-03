@@ -16,8 +16,13 @@
 </template>
 
 <script>
+    import Vue from 'vue'
+    import gIcon from './icon'
     export default {
         name: 'g-button',
+        components:{
+            gIcon
+        },
         // props: ['icon', 'iconPosition']
         props: {
             icon: {},

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev-test": "parcel watch test/* --no-cache & karma start",
-    "test": "parcel build test/* --no-minify && karma start --single-run"
+    "test": "parcel build test/* --no-cache --no-minify && karma start --single-run"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/1806IT/demo-lunzi#readme",
   "dependencies": {
+    "icon.vue": "^0.1.5",
     "vue": "^2.5.22",
     "vue-hot-reload-api": "^2.3.1"
   },
