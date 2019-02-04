@@ -35,7 +35,7 @@
                 default: 'left',
                 validator(value) {
                     // 获取用户传递的值
-                    console.log(value);
+                    // console.log(value);
                     return !(value !== 'right' && value !== 'left');
                 }
             }

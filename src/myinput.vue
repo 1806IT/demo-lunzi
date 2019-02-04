@@ -2,9 +2,9 @@
     <div class="wrapper" :class="{error}">
         <input type="text" :value="value" :disabled="disabled" :readonly="readonly"
             @change="$emit('change',$event)"
-            @input="$emit('input',$e)"
-            @focus="$emit('focus',$e)"
-            @iblur="$emit('blur',$e)"
+            @input="$emit('input',$event.target.value)"
+            @focus="$emit('focus',$event)"
+            @iblur="$emit('blur',$event)"
         >
         <template v-if="error">
             <icon name="setting"></icon>
@@ -38,7 +38,8 @@
             },
             error:{
                 type:String
-            }
+            },
+            msg:{}
         },
         components:{
             Icon
