@@ -1,11 +1,14 @@
 <template>
     <div class="wrapper" :class="{error}">
         <input type="text" :value="value" :disabled="disabled" :readonly="readonly"
-            @change="$emit('change')"
+            @change="$emit('change',$event)"
+            @input="$emit('input',$e)"
+            @focus="$emit('focus',$e)"
+            @iblur="$emit('blur',$e)"
         >
         <template v-if="error">
             <icon name="setting"></icon>
-            <span>{{error}}</span>
+            <span class="errorMessage">{{error}}</span>
         </template>
 
     </div>
@@ -16,6 +19,10 @@
 
     export default {
         name: "lunzi-input",
+        methods:{
+
+        },
+
         props: {
             value: {
                 type: String,
