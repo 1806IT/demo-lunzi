@@ -1,10 +1,6 @@
 <template>
-    <div class="col" :class="[span&&`col-${span}`,offset&&`offset-${offset}`]"
-         :style="{paddingLeft:gutter/2+'px',paddingRight:gutter/2+'px'}">
-        <div style="border:1px solid blue;height:50px;">
-            <slot></slot>
-        </div>
-
+    <div class="col" :class="colClasses" :style=colStyle>
+        <slot></slot>
     </div>
 </template>
 
@@ -18,7 +14,26 @@
             },
         },
         data(){
-            return { gutter:null}
+            return {
+                gutter:0,
+
+            }
+        },
+        computed:{
+            colStyle(){
+                return {
+                    paddingLeft:this.gutter/2+'px',
+                    paddingRight:this.gutter/2+'px'
+                }
+            },
+            colClasses(){
+                // return [this.span&&`col-${this.span}`,this.offset&&`offset-${this.offset}`]  下面用es6语法
+                let {span,offset}=this
+                return [
+                    span&&`col-${span}`,
+                    offset&&`offset-${offset}`
+                ]
+            }
         }
     }
 </script>
