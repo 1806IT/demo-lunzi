@@ -40,9 +40,9 @@
 </style>
 
 
-<div id="app">
+<div id="app" style="border:1px solid black">
 
-    <g-row>
+    <g-row gutter="20">
         <g-col>1</g-col>
         <g-col>2</g-col>
     </g-row>
@@ -60,6 +60,15 @@
     <g-row>
         <g-col span="2">2</g-col>
         <g-col :span="22">22</g-col>
+    </g-row>
+    <g-row>
+        <g-col span="2">2</g-col>
+        <g-col :span="20" :offset="2">20</g-col>
+    </g-row>
+    <g-row>
+        <g-col span="3">2</g-col>
+        <g-col :span="8" :offset="3">20</g-col>
+        <g-col :span="6" :offset="4">20</g-col>
     </g-row>
     <div class="box">
         <g-input value="王大" @change="inputChange"></g-input>
