@@ -1,6 +1,6 @@
 {
-  "name": "lunzi-zzc-174",
-  "version": "0.0.1",
+  "name": "lunzi-zzc-0-2",
+  "version": "0.0.2",
   "description": "这是一个ui框架",
   "main": "index.js",
   "scripts": {
@@ -38,6 +38,7 @@
     "karma-sinon-chai": "^2.0.2",
     "mocha": "^5.2.0",
     "parcel-bundler": "^1.11.0",
+    "sass": "^1.17.2",
     "sinon": "^7.2.3",
     "sinon-chai": "^3.3.0",
     "vue-template-compiler": "^2.5.22"
